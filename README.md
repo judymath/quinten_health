@@ -21,5 +21,8 @@ conda activate health_env
 # Install necessary requirements
 pip install -r requirements.txt
 
+# For version control please use nbstripout it will strip the outputs of the notebooks and track only the code cells
+nbstripout --install
+
 # Copy the csv dataset into the data folder
 ```
