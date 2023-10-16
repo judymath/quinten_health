@@ -15,7 +15,7 @@ The comments dataset consists of comments from patients about their drug treatme
 ## Setting up the project
 ```
 # Create a virtual environment and activate it
-conda create --name health_env
+conda create --name health_env python=3.8
 conda activate health_env
 
 # Install necessary requirements
