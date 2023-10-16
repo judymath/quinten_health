@@ -161,3 +161,4 @@ cython_debug/
 
 # Data
 data/raw_data_healthcare.csv
+*.png
