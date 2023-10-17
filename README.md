@@ -1,6 +1,6 @@
 # Quinten Health Project
 
-[![pylint]()]()
+![pylint]()
 
 ### Explore patients’ feedbacks on their drug treatment
 
