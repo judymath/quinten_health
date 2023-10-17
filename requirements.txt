@@ -1,2 +1,5 @@
 nbstripout
 setuptools
+nltk
+textblob
+spacy
