@@ -8,3 +8,4 @@ PyYAML
 python-dotenv
 pandas
 huggingface_hub
+tqdm
