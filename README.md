@@ -21,6 +21,9 @@ conda activate health_env
 # Install necessary requirements
 pip install -r requirements.txt
 
+# Install the local package
+pip install -e .
+
 # For version control please use nbstripout it will strip the outputs of the notebooks and track only the code cells
 nbstripout --install
 
