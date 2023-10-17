@@ -10,3 +10,4 @@ pandas
 huggingface_hub
 tqdm
 ipykernel
+transformers
