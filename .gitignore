@@ -165,3 +165,4 @@ data/raw_data_healthcare.csv
 *.png
 .DS_Store
 notebooks
+secret.json
