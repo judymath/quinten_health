@@ -1,4 +1,9 @@
 model:
-  key: >
-  !python/object/apply:subprocess.check_output 
-  ['python', '-c', 'import json; with open("secret.json") as f: data = json.load(f); print(data["api_key"])']
+  key: |
+    !python/object/apply:subprocess.check_output
+    - ['python', '-c', 'import json; with open("secret.json") as f: data = json.load(f); print(data["api_key"])']
+  analyze_prompt: prompts/analyze_prompt.txt
+  extract_prompt: prompts/extract_prompt.txt
+
+data:
+  raw_data: data/raw_data_healthcare.csv
