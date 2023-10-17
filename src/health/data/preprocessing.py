@@ -1,9 +1,12 @@
+"""
+Preprocess the csv file with comments
+"""
+
 import re
 import string
 import warnings
 
 import numpy as np
-import pandas as pd
 import spacy
 from nltk.corpus import stopwords
 from textblob import TextBlob
@@ -165,7 +168,6 @@ def preprocess_topic(df):
     df.drop(columns="medication", inplace=True)
 
     # Drop row n°3 (triggering OpenAI's policy)
-    y = df.iloc[3]
     df = df.drop(3)
 
     return df

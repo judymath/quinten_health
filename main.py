@@ -1,26 +1,31 @@
+"""
+Create the processed file on call
+"""
+
 import logging
 import os
 
 import pandas as pd
 import yaml
+from langchain.llms import HuggingFaceHub
+from tqdm import tqdm
 from dotenv import load_dotenv
 from health.data import postprocess_topic, preprocess_topic
 from health.topic import gpt_analyze, topic_extract
-from langchain import HuggingFaceHub
-from tqdm import tqdm
+
 
 logging.basicConfig(
     level=logging.INFO,  # Set the logging level
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",  # Set the log message format
 )
 
-with open("config/config.yaml", "r") as config_file:
-    config = yaml.safe_load(config_file)
+with open("config/config.yaml", "r", encoding="utf-8") as config_file:
+    configuration = yaml.safe_load(config_file)
 
 load_dotenv()
 
 # HuggingFace API
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = config["model"]["key"]
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = configuration["model"]["key"]
 
 llm = HuggingFaceHub(
     repo_id="timdettmers/guanaco-33b-merged",
@@ -44,10 +49,10 @@ def main(config):
     analyze_prompt_path = config["model"]["analyze_prompt"]
     extract_prompt_path = config["model"]["extract_prompt"]
 
-    with open(analyze_prompt_path, "r") as prompt_file:
+    with open(analyze_prompt_path, "r", encoding="utf-8") as prompt_file:
         analyze_prompt = prompt_file.read()
 
-    with open(extract_prompt_path, "r") as prompt_file:
+    with open(extract_prompt_path, "r", encoding="utf-8") as prompt_file:
         extract_prompt = prompt_file.read()
 
     # Apply gpt analysis function to each comment
@@ -68,5 +73,5 @@ def main(config):
 
 
 if __name__ == "__main__":
-    main(config)
+    main(configuration)
     logging.info("End of treatments")

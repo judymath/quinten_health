@@ -1,4 +1,8 @@
-from langchain import PromptTemplate
+"""
+Use the module to extract topics from the comments
+"""
+
+from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 
