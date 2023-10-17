@@ -160,6 +160,7 @@ cython_debug/
 #.idea/
 
 # Data
+*.csv
 data/raw_data_healthcare.csv
 *.png
 .DS_Store
