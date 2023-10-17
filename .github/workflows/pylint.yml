@@ -19,5 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
     - name: Analysing the code with pylint
-      run: |
-        pylint $(git ls-files '*.py')
+      uses: Silleellie/pylint-github-action@v1
+      with:
+        package-path: src
+        python-version: 3.11
+    
+
