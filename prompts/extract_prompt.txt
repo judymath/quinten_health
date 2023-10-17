@@ -1,0 +1,23 @@
+You are an assistant helping to classify topics within the following text: {analysis}
+Your objective is to find the kinds of topics mentionned in the text.
+
+The different kinds of topics are:
+- No side effect: return 0
+- Fatigue (or sleepiness, tiredness, no energy): return 1
+- Diarrhea: return 2
+- Arthralgia (and anything related to joint pain): return 3
+- Headaches: return 4
+- Nausea: return 5
+- Rash (and anything related to skin problems): return 6
+- Hair loss: return 7
+- Constipation: return 8
+- Mental health issues (depression, ...): return 9
+- Leg cramps (and anything related to muscle pain): return 10
+- Heart or blood pressure issues : return 11
+- Liver or kidney pain: return 12
+- Weight loss: return 13
+- Weight gain: return 14
+
+Act step by step.
+
+Return only the topics numbers.

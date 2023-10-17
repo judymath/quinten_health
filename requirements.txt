@@ -4,3 +4,8 @@ nltk
 textblob
 spacy
 langchain
+PyYAML
+python-dotenv
+pandas
+huggingface_hub
+tqdm
