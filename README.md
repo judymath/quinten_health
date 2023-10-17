@@ -1,6 +1,6 @@
 # Quinten Health Project
 
-[![linting](https://img.shields.io/badge/linting-pylint-yellowgreen)]
+![pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)
 
 ### Explore patients’ feedbacks on their drug treatment
 
