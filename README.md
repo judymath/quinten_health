@@ -1,7 +1,5 @@
 # Quinten Health Project
 
-[![linting: pylint]()](https://github.com/pylint-dev/pylint)
-
 ### Explore patients’ feedbacks on their drug treatment
 
 The aim of the project is to explore and better understand patient feedback on our treatments. We have already collected around 300 patient comments on publicly available websites related to our treatment for Crohn's disease and ulcerative colitis.
