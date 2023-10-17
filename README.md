@@ -29,3 +29,15 @@ nbstripout --install
 
 # Copy the csv dataset into the data folder
 ```
+
+## Using the topic extractor 
+
+- Put your personal key Hugging Face key in the secret.json file
+- Put the raw output of the comments directly in the data folder
+
+Run the following command
+
+```bash
+$python main.py
+```
+The output csv will be set directly in the data folder

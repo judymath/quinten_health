@@ -90,6 +90,20 @@ def preprocess_data(data):
 
 
 def preprocess_topic(df):
+    """
+    Preprocess a DataFrame containing medication and disease information.
+
+    This function performs various data preprocessing steps on the input DataFrame to prepare it for further analysis.
+    It removes unnecessary columns, selects comments related to Crohn's Disease and Ulcerative Colitis,
+    extracts the drug and disease information, and removes a specific row that may trigger OpenAI's policy.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing medication and disease information.
+
+    Returns:
+    pandas.DataFrame: The preprocessed DataFrame ready for further analysis.
+
+    """
     # Drop text_index column
     df.drop(columns="text_index", inplace=True)
 
@@ -119,6 +133,20 @@ def preprocess_topic(df):
 
 
 def postprocess_topic(df):
+    """
+    Postprocess a DataFrame containing topic extraction results.
+
+    This function takes a DataFrame with a 'topics' column and applies post-processing
+    to extract specific topics of interest based on the content of the 'topics' column.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing topic extraction results. It should
+    have a 'topics' column where topics have been extracted using a suitable method.
+
+    Returns:
+    pandas.DataFrame: The input DataFrame with additional columns for specific topics
+    extracted from the 'topics' column."""
+
     # Apply topic extraction function to each gpt_analysis
     df["no_side_effects"] = df["topics"].str.contains(" 0|Ex") & ~df[
         "topics"

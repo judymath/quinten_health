@@ -7,3 +7,4 @@ model:
 
 data:
   raw_data: data/raw_data_healthcare.csv
+  output_data: data/output.csv
