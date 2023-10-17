@@ -1,3 +1,11 @@
+"""
+This is the setup.py script for the 'health' package.
+
+It defines the package metadata and requirements for installation.
+
+Author: Quinten_team_1
+"""
+
 from setuptools import find_packages, setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
