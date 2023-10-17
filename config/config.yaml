@@ -1,0 +1,4 @@
+model:
+  key: >
+  !python/object/apply:subprocess.check_output 
+  ['python', '-c', 'import json; with open("secret.json") as f: data = json.load(f); print(data["api_key"])']
