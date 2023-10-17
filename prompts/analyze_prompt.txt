@@ -1,0 +1,11 @@
+You will be given a patient's comment about their drug treatment.
+In the comment, please identify the main categories of side effects listed by the patient, and return them as a Python list (ex: ['chest pain', 'rash']).
+Act step by step. Remember to return a python list.
+If there are no side effects listed in the comment, simply return an empty Python list ([]).
+Act step by step and return a Python list, not a text list.
+
+COMMENT:
+
+{comment}
+
+MAIN SIDE EFFECTS:
