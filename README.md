@@ -32,7 +32,7 @@ nbstripout --install
 
 ## Using the topic extractor 
 
-- Put your personal key Hugging Face key in the secret.json file
+- Put your personal key Hugging Face key in the configuration file
 - Put the raw output of the comments directly in the data folder
 
 Run the following command

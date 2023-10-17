@@ -1,7 +1,5 @@
 model:
-  key: |
-    !python/object/apply:subprocess.check_output
-    - ['python', '-c', 'import json; with open("secret.json") as f: data = json.load(f); print(data["api_key"])']
+  key: your_secret_key_here
   analyze_prompt: prompts/analyze_prompt.txt
   extract_prompt: prompts/extract_prompt.txt
 
