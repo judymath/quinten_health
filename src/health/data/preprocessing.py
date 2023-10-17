@@ -12,6 +12,20 @@ warnings.simplefilter("ignore")
 
 
 def preprocess_review(review):
+    """
+    Preprocess a text review to prepare it for analysis.
+
+    This function takes a text review and performs a series of
+    preprocessing steps, including converting the text to lowercase,
+    removing HTML entities, URLs, special characters, non-ASCII
+    characters, and extra spaces, and then lemmatizing the text using spaCy.
+
+    Parameters:
+    review (str): The input text review to be preprocessed.
+
+    Returns:
+    str: The preprocessed and lemmatized text review.
+    """
     # Load the spaCy English language model
     nlp = spacy.load("en_core_web_sm")
 
@@ -49,6 +63,25 @@ def preprocess_review(review):
 
 
 def preprocess_data(data):
+    """
+    Preprocess a DataFrame containing text reviews and
+    extract various text-based features.
+
+    This function applies preprocessing to text reviews
+    in a DataFrame, including removing stopwords, performing
+    sentiment analysis, and extracting text-based features
+    such as word counts, punctuation counts, and more.
+
+    Parameters:
+    data (pandas.DataFrame): The DataFrame containing text
+    reviews in the 'comment' column.
+
+    Returns:
+    pandas.DataFrame: The input DataFrame with added columns
+    for preprocessed text, sentiment analysis results, and
+    text-based features.
+
+    """
     # Apply the preprocessing function to the 'comment' column
     data["review_clean"] = data["comment"].apply(preprocess_review)
 
@@ -91,17 +124,23 @@ def preprocess_data(data):
 
 def preprocess_topic(df):
     """
-    Preprocess a DataFrame containing medication and disease information.
+    Preprocess a DataFrame containing medication
+    and disease information.
 
-    This function performs various data preprocessing steps on the input DataFrame to prepare it for further analysis.
-    It removes unnecessary columns, selects comments related to Crohn's Disease and Ulcerative Colitis,
-    extracts the drug and disease information, and removes a specific row that may trigger OpenAI's policy.
+    This function performs various data preprocessing
+    steps on the input DataFrame to prepare it for further analysis.
+    It removes unnecessary columns, selects comments
+    related to Crohn's Disease and Ulcerative Colitis,
+    extracts the drug and disease information, and
+    removes a specific row that may trigger OpenAI's policy.
 
     Parameters:
-    df (pandas.DataFrame): The DataFrame containing medication and disease information.
+    df (pandas.DataFrame): The DataFrame containing
+    medication and disease information.
 
     Returns:
-    pandas.DataFrame: The preprocessed DataFrame ready for further analysis.
+    pandas.DataFrame: The preprocessed DataFrame
+    ready for further analysis.
 
     """
     # Drop text_index column
@@ -134,17 +173,23 @@ def preprocess_topic(df):
 
 def postprocess_topic(df):
     """
-    Postprocess a DataFrame containing topic extraction results.
+    Postprocess a DataFrame containing topic
+    extraction results.
 
-    This function takes a DataFrame with a 'topics' column and applies post-processing
-    to extract specific topics of interest based on the content of the 'topics' column.
+    This function takes a DataFrame with a
+    'topics' column and applies post-processing
+    to extract specific topics of interest
+    based on the content of the 'topics' column.
 
     Parameters:
-    df (pandas.DataFrame): The DataFrame containing topic extraction results. It should
-    have a 'topics' column where topics have been extracted using a suitable method.
+    df (pandas.DataFrame): The DataFrame
+    containing topic extraction results. It should
+    have a 'topics' column where topics have
+    been extracted using a suitable method.
 
     Returns:
-    pandas.DataFrame: The input DataFrame with additional columns for specific topics
+    pandas.DataFrame: The input DataFrame with
+    additional columns for specific topics
     extracted from the 'topics' column."""
 
     # Apply topic extraction function to each gpt_analysis
