@@ -17,6 +17,10 @@ class DummyLLMModel:
         """Dummy method"""
         return 0
 
+    def len(self):
+        """Dummy method"""
+        return 0
+
 
 # Write test cases for gpt_analyze
 def test_gpt_analyze_with_valid_input():
